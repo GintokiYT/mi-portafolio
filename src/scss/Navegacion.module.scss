@@ -1,0 +1,153 @@
+.header {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  background-color: #1e1e1e;
+  z-index: 200;
+  backdrop-filter: blur(10px);
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titulo {
+  margin: 0 2rem;
+  font-size: 1.7rem;
+  color: #F8D65E;
+  cursor: pointer;
+  font-family: var(--font-titulo);
+  font-weight: 600;
+
+  //animation: tituloEfecto 3s infinite ease-in-out;
+
+  a:hover {
+    color: #F8D65E;
+  }
+}
+
+@keyframes tituloEfecto {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.menuDesktop {
+  display: none;
+
+  .navegacion {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0 1rem;
+
+    a {
+      font-size: 1rem;
+
+      &:hover {
+        color: #F8D65E;
+        border-bottom: 1px solid #F8D65E;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    display: block;
+  }
+}
+
+.menuMobile {
+  display: block;
+
+  i {
+    margin: 0 1.5rem;
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+// Menu Hamburguesa
+.menu {
+  position: fixed;
+  z-index: 300;
+  right: 0;
+  width: 280px;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.containerMenu {
+  min-height: calc(100vh - 70px);
+  background-color: #1e1e1e;
+  position: relative;
+}
+
+.navegacionMenu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  li {
+    font-size: 1.3rem;
+
+    a:hover {
+      color: #F8D65E;
+      border-bottom: 1px solid #F8D65E;
+    }
+  }
+}
+
+.aparecerMenu {
+  transform: translateX(0%);
+  animation: menuEffectAparecer 1s ease-in-out;
+}
+
+@keyframes menuEffectAparecer {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.desaparecerMenu {
+  transform: translateX(100%);
+  animation: menuEffectDesaparecer 1s ease-in-out;
+}
+
+@keyframes menuEffectDesaparecer {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.menuInicio {
+  transform: translateX(100%);
+}
